@@ -6,7 +6,7 @@ Use this repository to setup your flask application and MYSQL in your Kubernetes
 - First clone the code to your machine and switch to 3-tier branch
 ```bash
 git clone https://github.com/12345ujjwal/dual-service-k8s-project/
-cd dual-service-k8s-project/Docker-2_tier_flask_app
+cd dual-service-k8s-project/Docker-2_tier_flask_app/k8s
 ```
 - Now, execute below commands one by one
 ```bash
