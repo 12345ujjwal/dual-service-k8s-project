@@ -1,25 +1,30 @@
-# Simple Notes App
-This is a simple notes app built with React and Django.
+# 3 Tier Kubernetes Project
+This is a 3 Tier Kubernetes Project
 
-## Requirements
-1. Python 3.9
-2. Node.js
-3. React
+## 3 Tier
+1. Python Notes App
+2. Nginx
+3. Flask App with MySQL database
 
 ## Installation
 1. Clone the repository
 ```
-git clone https://github.com/LondheShubham153/django-notes-app.git
+git clone https://github.com/12345ujjwal/dual-service-k8s-project/
 ```
 
-2. Build the app
+2. Get inside the directory
 ```
-docker build -t notes-app .
+cd dual-service-k8s-project/k8s
+```
+3. Create a KIND cluster
+```
+kind create cluster --name project --config=kind-cluster.yml
 ```
 
-3. Run the app
+3. Apply the YML for Python Nodes app
 ```
-docker run -d -p 8000:8000 notes-app:latest
+kubectl apply -f deployment.yml
+kubectl apply -f service.yml
 ```
 
 ## Nginx
