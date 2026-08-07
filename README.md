@@ -21,15 +21,48 @@ cd dual-service-k8s-project/k8s
 kind create cluster --name project --config=kind-cluster.yml
 ```
 
-3. Apply the YML for Python Nodes app
+## Service-1: Apply the YML for Python Nodes app
 ```
 kubectl apply -f deployment.yml
 kubectl apply -f service.yml
 ```
 
-## Nginx
+## Service-2: Apply the YML for Nginx
+In root project directory, run the below commands
+1. Change directory to Nginx
+```
+cd nginx/
+```
+2. Apply all YAML files for Nginx
+```
+kubectl apply -f deployment.yml
+kubectl apply -f service.yml
+```
+If you want to use persistent volume instead, apply the pv.yml , pvc.yml and vol-deployment.yml
 
-Install Nginx reverse proxy to make this application available
-
-`sudo apt-get update`
-`sudo apt install nginx`
+## Service-3: Flask App with MySQL Database
+In root project directory, run the below commands
+1. Change directory to Docker-2_tier_flask_app
+```
+cd Docker-2_tier_flask_app/k8s
+```
+2. Apply all YAML files for Flask and MySQL 
+- Now, execute below commands one by one
+```bash
+kubectl apply -f twotier-deployment.yml
+```
+```bash
+kubectl apply -f twotier-deployment-svc.yml
+```
+```bash
+kubectl apply -f persistent-volume.yml
+```
+```bash
+kubectl apply -f persistent-volume-claim.yml
+```
+```bash
+kubectl apply -f mysql-deployment.yml
+```
+```bash
+kubectl apply -f mysql-deployment-svc.yml
+```
