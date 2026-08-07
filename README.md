@@ -76,3 +76,6 @@ kubectl apply -f mysql-deployment-svc.yml
 - Service 3
 <img width="1137" height="973" alt="image" src="https://github.com/user-attachments/assets/7624605a-0a40-48ee-bdc8-4e57919eb2eb" />
 
+- Adminer
+<img width="1044" height="750" alt="image" src="https://github.com/user-attachments/assets/762d1c97-8e59-4d66-ac66-dc11ccc82db5" />
+
