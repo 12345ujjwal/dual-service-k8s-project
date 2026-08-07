@@ -97,7 +97,7 @@ kubectl get svc adminer
 ```
 kubectl port-forward svc/adminer 8080:8080
 ```
-test credential:
+## test credential: <br>
 Server: mydb <br>
 username: admin <br>
 Password: admin
