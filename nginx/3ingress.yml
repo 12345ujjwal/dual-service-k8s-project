@@ -1,0 +1,37 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: project-routing
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+spec:
+  ingressClassName: nginx
+  rules:
+  - http:
+      paths:
+      # Flask app on /flask
+      - path: /flask(/|$)(.*)
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: two-tier-app-service
+            port:
+              number: 80
+
+      # Nginx app on /nginx
+      - path: /nginx(/|$)(.*)
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: nginx-service
+            port:
+              number: 80
+
+      # Notes app on /
+      - path: /()(.*)
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: notes-service
+            port:
+              number: 8000

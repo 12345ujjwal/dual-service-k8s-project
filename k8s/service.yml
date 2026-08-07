@@ -3,7 +3,7 @@ kind: Service
 
 metadata:
   name: notes-service
-  namespace: dev
+#  namespace: dev
 
 spec:
   selector:

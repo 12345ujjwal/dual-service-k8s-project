@@ -3,7 +3,7 @@ kind: Deployment
 
 metadata:
   name: notes-deployment
-  namespace: dev
+#  namespace: dev
 
 spec:
   replicas: 1
@@ -16,8 +16,8 @@ spec:
         app: notes
     spec:
       containers:
-      - name: notes
+      - name: django-notes-app
         imagePullPolicy: IfNotPresent
-        image: notes:latest
+        image: ujjwalpratap/django-notes-app
         ports:
         - containerPort: 8000

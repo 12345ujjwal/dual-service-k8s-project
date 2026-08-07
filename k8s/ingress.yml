@@ -3,7 +3,7 @@ kind: Ingress
 
 metadata:
   name: project-routing
-  namespace: dev
+#  namespace: dev
 
 spec:
   rules:
@@ -24,3 +24,11 @@ spec:
             name: notes-service
             port:
               number: 8000
+
+      - path: /flask
+        pathType: Prefix
+        backend:
+          service:
+            name: two-tier-app-service
+            port:
+              number: 80

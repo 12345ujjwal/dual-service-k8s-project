@@ -3,7 +3,7 @@ kind: Deployment
 
 metadata:
   name: nginx-deployment
-  namespace: dev
+#  namespace: dev
   labels:
     app: nginx
 
