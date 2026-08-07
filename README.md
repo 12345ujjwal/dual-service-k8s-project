@@ -85,6 +85,23 @@ kubectl apply -f ingress.yml
 kubectl port-forward svc/ingress-nginx-controller -n ingress-nginx 8000:80 --address=0.0.0.0
 ```
 
+## Adminer installation and port forwarding
+
+```
+kubectl run adminer --image=adminer --port=8080
+kubectl expose pod adminer --type=NodePort --port=8080
+```
+```
+kubectl get svc adminer
+```
+```
+kubectl port-forward svc/adminer 8080:8080
+```
+test credential:
+Server: mydb
+username: admin
+Password: admin
+
 ## Screenshot
 - Service 1
 <img width="1137" height="973" alt="image" src="https://github.com/user-attachments/assets/d2505fe1-92cc-4cba-aa65-63bfc393872d" />
