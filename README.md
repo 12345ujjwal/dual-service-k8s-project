@@ -20,6 +20,17 @@ cd dual-service-k8s-project/k8s
 ```
 kind create cluster --name project --config=kind-cluster.yml
 ```
+4. Install ingress-controller and apply ingress YAML
+
+- Installing Ingress controller
+```
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml
+```
+
+- Verify the installation
+```
+kubectl get pods -n ingress-nginx
+```
 
 ## Service-1: Apply the YML for Python Nodes app
 ```
@@ -66,6 +77,14 @@ kubectl apply -f mysql-deployment.yml
 ```bash
 kubectl apply -f mysql-deployment-svc.yml
 ```
+
+## Ingress apply and controller port forward
+Run the below command in Project Root directory
+```
+kubectl apply -f ingress.yml
+kubectl port-forward svc/ingress-nginx-controller -n ingress-nginx 8000:80 --address=0.0.0.0
+```
+
 ## Screenshot
 - Service 1
 <img width="1137" height="973" alt="image" src="https://github.com/user-attachments/assets/d2505fe1-92cc-4cba-aa65-63bfc393872d" />
