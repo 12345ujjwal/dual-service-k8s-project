@@ -40,6 +40,28 @@ kubectl apply -f service.yml
 ```
 If you want to use persistent volume instead, apply the pv.yml , pvc.yml and vol-deployment.yml
 
+3. Install ingress-controller and apply ingress YAML
+
+- Installing Ingress controller
+```
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml
+```
+
+- Verify the installation
+```
+kubectl get pods -n ingress-nginx
+```
+
+- Apply the ingress file
+```
+kubectl apply -f ingress.yml
+```
+
+## Ingress controller port forward
+```
+kubectl port-forward svc/ingress-nginx-controller -n ingress-nginx 8000:80 --address=0.0.0.0
+```
+
 ## Screenshot
 - Service 1
 <img width="1137" height="973" alt="image" src="https://github.com/user-attachments/assets/d2505fe1-92cc-4cba-aa65-63bfc393872d" />
