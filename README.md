@@ -67,10 +67,10 @@ kubectl apply -f mysql-deployment.yml
 kubectl apply -f mysql-deployment-svc.yml
 ```
 ## Screenshot
+- Service 1
 <img width="1137" height="973" alt="image" src="https://github.com/user-attachments/assets/d2505fe1-92cc-4cba-aa65-63bfc393872d" />
-
+- Service 2
 <img width="1137" height="973" alt="image" src="https://github.com/user-attachments/assets/561c579d-2e21-455f-97b2-e836d06c7018" />
-
-
+- Service 3
 <img width="1137" height="973" alt="image" src="https://github.com/user-attachments/assets/7624605a-0a40-48ee-bdc8-4e57919eb2eb" />
 
